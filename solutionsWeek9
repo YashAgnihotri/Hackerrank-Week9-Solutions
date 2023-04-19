@@ -1,0 +1,87 @@
+Problem 1:
+struct is a way to combine multiple fields to represent a composite data structure. For example, we can store details related to a student in a struct consisting of his age (int), first_name (string), last_name (string) and standard (int). You have to create a struct, named Student, representing the student's details, as mentioned above, and store the data of a student.
+Input Format
+Input will consist of four lines. The first line will contain an integer, representing age. The second line will contain a string, consisting of lower-case Latin characters ('a'-'z'), representing the first_name of a student. The third line will contain another string, consisting of lower-case Latin characters ('a'-'z'), representing the last_name of a student. The fourth line will contain an integer, representing the standard of student.
+Constraints
+The number of characters in first_name and last_name will not exceed 50.
+Output Format
+Output will be of a single line, consisting of age, first_name, last_name and standard, each separated by one white space.
+Sample Input 0
+15
+john
+carmack
+10
+Sample Output 0
+15 john carmack 10
+_________________________________________________________________________________________________________________________________
+Solution 1:
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+struct student{
+        int age;
+        char fname[51];
+        char lname[51];
+        int standard;        
+};
+int main(){
+    struct student s1;
+        scanf("%d",&s1.age);
+        scanf("%s",s1.fname);
+        scanf("%s",s1.lname);
+        scanf("%d",&s1.standard);
+        printf("%d %s %s %d",s1.age,s1.fname,s1.lname,s1.standard);
+        return 0;
+}
+_________________________________________________________________________________________________________________________________
+Problem 2:
+A tournament was held in LPU. There were 11 players in team. Each team member has scored some runs. Create a structure that contains player id and runs scored by each player. You need to calculate the final score scored by cricket team.
+Input Format
+Input consist of player id and runs scored by each player.
+Constraints
+no. of players in cricket team are 11.
+Output Format
+Display the total score of a team.
+Sample Input 0
+11
+1 10
+2 10
+3 10
+4 10
+5 5
+6 5
+7 5
+8 5
+9 5
+10 5
+11 5
+Sample Output 0
+75
+_________________________________________________________________________________________________________________________________
+Solution 2:
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+struct player{
+    int id;
+    int score;
+};
+int main(){
+    struct player t[11];
+    int n;
+    scanf("%d",&n);
+    for (int i=0;i<=n;i++){
+        scanf("%d %d",&t[i].id,&t[i].score);
+    }
+    int total=0;
+    for (int i=0;i<n;i++){
+        total += t[i].score; 
+    }
+    printf("%d",total);
+
+    return 0;
+}
